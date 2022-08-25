@@ -1,0 +1,21 @@
+name: GitHub Actions Test
+on: [push]
+env:
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+
+jobs:
+  GitHub-Actions-Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install poetry
+        run: pipx install poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'poetry'
+      - run: poetry install
+      - run: poetry run python3 secrets-test.py
+      - name: List environment variables
+        run: export
+
