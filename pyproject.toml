@@ -4,16 +4,15 @@ version = "0.1.0"
 description = "Test handling secretes in Python, R and GitHub Actions."
 authors = ["Arne Sørli <81353974+arneso-ssb@users.noreply.github.com>"]
 license = "MIT"
+package-mode = false
 
 [tool.poetry.dependencies]
-pydantic = "^1.9.2"
 python = "^3.10"
-python-dotenv = "^0.20.0"
+python-dotenv = ">=0.20.0"
 
 [tool.poetry.dev-dependencies]
-black = "^22.6.0"
-isort = "^5.10.1"
-mypy = "^0.971"
+black = ">022.6.0"
+isort = ">=5.10.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
